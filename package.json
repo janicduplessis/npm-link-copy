@@ -1,17 +1,16 @@
 {
   "name": "npm-link-copy",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "npm link that copies files instead of using symlinks",
   "main": "lib/index.js",
   "files": [
     "lib"
   ],
-  "bin": {
-    "npm-link-copy": "./lib/index.js"
-  },
+  "bin": "./lib/index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
     "watch": "babel src --out-dir lib --watch",
+    "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
