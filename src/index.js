@@ -13,13 +13,13 @@ function copyModule(source, destination) {
 }
 
 function run() {
-  const cwd = process.cwd();
-  const moduleSource = path.resolve(cwd, process.argv[2]);
-
-  if (!moduleSource) {
+  if (!process.argv[2] || process.argv[2] === '-h' || process.argv[2] === '--help') {
     printUsage();
     return;
   }
+
+  const cwd = process.cwd();
+  const moduleSource = path.resolve(cwd, process.argv[2]);
 
   const modulePackage = fs.readJSONSync(path.join(moduleSource, 'package.json'));
   const moduleDestination = path.resolve(cwd, 'node_modules', modulePackage.name);
