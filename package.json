@@ -1,6 +1,6 @@
 {
   "name": "npm-link-copy",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "npm link that copies files instead of using symlinks",
   "main": "lib/index.js",
   "files": [
